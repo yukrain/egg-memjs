@@ -1,0 +1,15 @@
+{
+  "name": "egg-memjs",
+  "version": "1.0.0",
+  "eggPlugin": {
+    "name": "memjs"
+  },
+  "description": "Memcached plugin for Egg base on memjs",
+  "main": "app.js",
+  "repository": "",
+  "author": "yukrain@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "memjs": "^1.1.0"
+  }
+}
