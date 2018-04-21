@@ -1,22 +1,17 @@
 # egg-memjs
 
-一个基于memjs的egg插件
-The egg memjs plugin.
-
+一个基于memjs的memcached的egg插件
 你可以直接通过egg的context对象来操作缓存
-You can get/set/delete in the egg's context object directly.
 
 ## 安装
 ```
 $ npm i egg-memjs --save
 ```
 
-
-
 ## 开启插件
 ```javascript
 // {app_root}/config/plugin.js
-exports.memjs = {
+exports.memcached = {
   enable: true,
   package: 'egg-memjs'
 };
@@ -25,7 +20,7 @@ exports.memjs = {
 ## 配置
 ```javascript
 // {app_root}/config/config.default.js 
-exports.memjs = {
+exports.memcached = {
   "client": {
     "hosts": ['10.0.1.1:11211'],  // The memcached cluster list.
     "options":{
@@ -60,13 +55,14 @@ exports.memjs = {
   }
 };
 ```
+##通过app.memcached访问
+#### 设置缓存：`[Promise] app.memcached.set(key, value, expires)`  
+#### 获取缓存：`[Promise] app.memcached.get(key)`
+#### 删除缓存：`[Promise] app.memcached.del(key)`   
+
+
+##通过ctx调用
+## 方法
 #### 设置缓存：`[Promise] ctx.saveToCache(key, value, expires)` 
-key: 键名，字符串
-value: 键值
-expires: 过期时间  
-
-#### 加载缓存：`[Promise] ctx.loadFromCache(key)`
-key: 键名，字符串 
-
-#### 清除缓存：`[Promise] ctx.destroyCache(key)`   
-key: 键名，字符串 
+#### 获取缓存：`[Promise] ctx.loadFromCache(key)`
+#### 删除缓存：`[Promise] ctx.destroyCache(key)`   

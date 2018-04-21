@@ -1,16 +1,14 @@
 'use strict';
 
-const path = require('path');
-
-module.exports = antx => {
+module.exports = () => {
   return {
-    memjs: {
-      default:{
-        "hosts": ['127.0.0.1:11211'],
-        "options": {
-          failover: false
-        }
-      } 
+    memcached: {
+      default: {
+        hosts: [ '127.0.0.1:11211' ],
+        options: {
+          failover: false,
+        },
+      },
     },
   };
 };

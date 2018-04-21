@@ -2,14 +2,34 @@
   "name": "egg-memjs",
   "version": "1.0.0",
   "eggPlugin": {
-    "name": "memjs"
+    "name": "memcached"
   },
   "description": "Memcached plugin for Egg base on memjs",
   "main": "app.js",
-  "repository": "",
-  "author": "yukrain@163.com",
+  "author": "yukrain <yukrain@163.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yukrain/egg-memjs.git"
+  },
   "dependencies": {
     "memjs": "^1.1.0"
+  },
+  "devDependencies": {
+    "egg": "^2.7.1",
+    "egg-bin": "^4.7.0",
+    "egg-mock": "^3.17.1",
+    "eslint": "^4.19.1",
+    "eslint-config-egg": "^7.0.0",
+    "lodash": "^4.17.5"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "contributors": "ali-contributors"
   }
 }
