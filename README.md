@@ -1,3 +1,7 @@
+[![NPM version](https://badge.fury.io/js/egg-memjs.svg)](http://badge.fury.io/js/egg-memjs)
+[![NPM](https://nodei.co/npm/egg-memjs.png?downloads=true&stars=true)](https://www.npmjs.org/package/egg-memjs)
+
+
 # egg-memjs
 
 一个基于memjs的memcached的egg插件
